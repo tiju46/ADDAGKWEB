@@ -18,8 +18,9 @@ public class NewTest {
   public void launchbrowser() {
    
 	  System.out.println("launching Mozilla FireFox browser");
-	  System.setProperty("webdriver.gecko.driver","C:\\Users\\tiju thomas\\Downloads\\geckodriver-v0.24.0-win64\\geckodriver.exe");
-	 // FirefoxOptions options = new FirefoxOptions();
+	  //System.setProperty("webdriver.gecko.driver","C:\\Users\\tiju thomas\\Downloads\\geckodriver-v0.24.0-win64\\geckodriver.exe");
+	  System.setProperty("webdriver.gecko.driver", "/home/testing/Downloads/geckodriver-v0.24.0-linux64/geckodriver");
+	  // FirefoxOptions options = new FirefoxOptions();
 	  //options.setCapability("marionette", false);
 	  driver = new FirefoxDriver();
   }
