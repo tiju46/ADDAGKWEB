@@ -1,12 +1,8 @@
-import java.io.File;
 import java.util.concurrent.TimeUnit;
-//import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.firefox.FirefoxProfile;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -19,9 +15,7 @@ public class NewTest {
   
    @BeforeTest
        public void launchbrowser() {
-	   File pathToBinary = new File("/home/testing/firefox-62.0/firefox/firefox-bin");
-	   FirefoxBinary ffBinary = new FirefoxBinary(pathToBinary);
-	   FirefoxProfile firefoxProfile = new FirefoxProfile();       
+	        
    
 	  System.out.println("launching Mozilla FireFox browser");
 	  //System.setProperty("webdriver.gecko.driver","C:\\Users\\tiju thomas\\Downloads\\geckodriver-v0.24.0-win64\\geckodriver.exe");
