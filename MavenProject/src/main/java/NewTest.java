@@ -22,7 +22,7 @@ public class NewTest {
 	  System.setProperty("webdriver.gecko.driver", "/home/testing/Downloads/geckodriver-v0.24.0-linux64/geckodriver");
 	  //options.setCapability("marionette", false);
 	  FirefoxOptions options = new FirefoxOptions();
-      options.setHeadless(false);
+      options.setHeadless(true);
       driver = new FirefoxDriver(options);
       }
   
