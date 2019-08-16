@@ -17,7 +17,7 @@ public class NewTest {
        public void launchbrowser() {
 	        
    
-	  System.out.println("launching Mozilla FireFox browser");
+	  System.out.println("######--- launching Mozilla FireFox browser ---######");
 	  //System.setProperty("webdriver.gecko.driver","C:\\Users\\tiju thomas\\Downloads\\geckodriver-v0.24.0-win64\\geckodriver.exe");
 	  System.setProperty("webdriver.gecko.driver", "/home/testing/Downloads/geckodriver-v0.24.0-linux64/geckodriver");
 	  //options.setCapability("marionette", false);
@@ -34,6 +34,7 @@ public class NewTest {
 	    driver.findElement(By.name("password")).sendKeys("adda12345");
 	    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 	    driver.findElement(By.id("submit_login")).click();
+	    System.out.println("Test Case Passed ----- Successfully Logged In");
 	    
 	    }
         @Test(priority=2)
