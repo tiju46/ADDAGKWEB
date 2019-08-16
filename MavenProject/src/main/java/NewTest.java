@@ -28,6 +28,7 @@ public class NewTest {
   
         @Test(priority=1)
         public void openADDAGK() {
+        System.out.println("######--- launching ADDA GateKeeper Web ---######");
 		driver.navigate().to("https://apartmentadda.com/user/security.php?is_adda_io=0#/visitor/visitor-in");
 		driver.findElement(By.name("email")).sendKeys("thomas@3five8.com");
 	    driver.findElement(By.name("password")).sendKeys("adda12345");
@@ -46,6 +47,7 @@ public class NewTest {
 	    driver.findElement(By.xpath("//div[contains(text(),'Personal')]")).click();
 	    driver.findElement(By.xpath("//button[@name='save_visiter']")).click();
 	    Thread.sleep(5000);
+	    System.out.println("Test Case Passed ----- Visitor Checked In");
 	    
         }
 	   
@@ -54,12 +56,14 @@ public class NewTest {
 	    driver.findElement(By.xpath("//a[@href='#/visitor/visitor-out']")).click();
 	    driver.findElement(By.xpath("//button[@type='button' and contains(., 'CHECK OUT')]")).click();
 	    Thread.sleep(5000);
+	    System.out.println("Test Case Passed ----- Visitor Checked Out");
 	    }
 	    @Test(priority=4)
 	    public void staffcheckin() throws InterruptedException {
 	    driver.findElement(By.xpath("//p[contains(text(),'Staff')]")).click();
 	    driver.findElement(By.xpath("//button[@type='button'][contains(text(),'CHECK IN')]")).click();
 	    Thread.sleep(5000);
+	    System.out.println("Test Case Passed ----- Staff Checked In");
 	    }
 	    
 	    @Test(priority=5)
@@ -67,12 +71,14 @@ public class NewTest {
 	    driver.findElement(By.xpath("//a[@href='#/staff/staff-out']")).click();
 	    driver.findElement(By.xpath("//button[@type='button'][contains(text(),'CHECK OUT')]")).click();
 	    Thread.sleep(5000);
+	    System.out.println("Test Case Passed ----- Staff Checked Out");
 	    }
 	    
         @AfterTest
         public void closeDriver() {
 		if(driver!=null) {
 			driver.close();
+	    System.out.println("######--- Browser Closed ---######");
 		}
 	}
  
