@@ -40,7 +40,7 @@ public class NewTest {
 	    }
         @Test(priority=2)
         public void CheckIn() throws InterruptedException {
-        System.out.println("*****--- Expected Visitor ---*****");
+        //System.out.println("*****--- Expected Visitor ---*****");
 	    driver.findElement(By.xpath("//ng-multiselect-dropdown[@id='unit_number']")).click();
 	    driver.findElement(By.xpath("//div[contains(text(),'200-15')]")).click();
 	    driver.findElement(By.xpath("//button[@type='button'][contains(text(),'CHECK IN')]")).click();
@@ -48,8 +48,8 @@ public class NewTest {
         driver.findElement(By.xpath("//ng-multiselect-dropdown[@id='reason']")).click();
 	    driver.findElement(By.xpath("//div[contains(text(),'Personal')]")).click();
 	    driver.findElement(By.xpath("//button[@name='save_visiter']")).click();
-	    Thread.sleep(5000);
 	    System.out.println("Test Case Passed ----- Visitor Checked In");
+	    Thread.sleep(5000);
 	    
         }
 	   
