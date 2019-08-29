@@ -57,8 +57,8 @@ public class NewTest {
 	    public void CheckOut() throws InterruptedException {
 	    driver.findElement(By.xpath("//a[@href='#/visitor/visitor-out']")).click();
 	    driver.findElement(By.xpath("//button[@type='button' and contains(., 'CHECK OUT')]")).click();
-	    Thread.sleep(5000);
 	    System.out.println("Test Case Passed ----- Visitor Checked Out");
+	    Thread.sleep(5000);
 	    }
 	    
 	   // @Test(priority=4)
@@ -88,7 +88,7 @@ public class NewTest {
 	    Thread.sleep(5000);
 	    System.out.println("Test Case Passed ----- Visitor Checked Out");
 	    }
-	    @Test(priority=6)
+	    @Test(priority=5)
 	    public void staffcheckin() throws InterruptedException {
 	    driver.findElement(By.xpath("//p[contains(text(),'Staff')]")).click();
 	    driver.findElement(By.xpath("//button[@type='button'][contains(text(),'CHECK IN')]")).click();
@@ -96,7 +96,7 @@ public class NewTest {
 	    System.out.println("Test Case Passed ----- Staff Checked In");
 	    }
 	    
-	    @Test(priority=7)
+	    @Test(priority=6)
 	    public void staffcheckout() throws InterruptedException {
 	    driver.findElement(By.xpath("//a[@href='#/staff/staff-out']")).click();
 	    driver.findElement(By.xpath("//button[@type='button'][contains(text(),'CHECK OUT')]")).click();
