@@ -27,23 +27,24 @@ public class NewTest {
       }
   
         @Test(priority=1)
-        public void openADDAGK() {
+        public void openADDAGK() throws InterruptedException {
         System.out.println("######--- launching ADDA GateKeeper Web ---######");
 		driver.navigate().to("https://apartmentadda.com/user/security.php?is_adda_io=0#/visitor/visitor-in");
-		driver.findElement(By.name("email")).sendKeys("thomas@3five8.com");
-	    driver.findElement(By.name("password")).sendKeys("adda12345");
+		
+		driver.findElement(By.name("email")).sendKeys("thomastiju@yahoo.com");
+	    driver.findElement(By.name("password")).sendKeys("adda1234");
 	    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 	    driver.findElement(By.id("submit_login")).click();
 	    System.out.println("Test Case Passed ----- Successfully Logged In");
-	    
+	    Thread.sleep(5000);
 	    }
         @Test(priority=2)
         public void CheckIn() throws InterruptedException {
+        System.out.println("*****--- Expected Visitor ---*****");
 	    driver.findElement(By.xpath("//ng-multiselect-dropdown[@id='unit_number']")).click();
-	    driver.findElement(By.xpath("//div[contains(text(),'Block 1-002')]")).click();
-	    //driver.findElement(By.xpath("//tr"));	
+	    driver.findElement(By.xpath("//div[contains(text(),'200-15')]")).click();
 	    driver.findElement(By.xpath("//button[@type='button'][contains(text(),'CHECK IN')]")).click();
-	    Thread.sleep(5000);
+	    Thread.sleep(3000);
         driver.findElement(By.xpath("//ng-multiselect-dropdown[@id='reason']")).click();
 	    driver.findElement(By.xpath("//div[contains(text(),'Personal')]")).click();
 	    driver.findElement(By.xpath("//button[@name='save_visiter']")).click();
@@ -59,7 +60,35 @@ public class NewTest {
 	    Thread.sleep(5000);
 	    System.out.println("Test Case Passed ----- Visitor Checked Out");
 	    }
-	    @Test(priority=4)
+	    
+	   // @Test(priority=4)
+        public void MAnualCheckIn() throws InterruptedException {
+        System.out.println("*****--- Normal Visitor ---*****");
+        driver.findElement(By.xpath("//a[@href='#/visitor/visitor-in']")).click();
+	    driver.findElement(By.xpath("//ng-multiselect-dropdown[@id='unit_number']")).click();
+	    driver.findElement(By.xpath("//div[contains(text(),'200-14')]")).click();
+	    Thread.sleep(5000);
+	    driver.findElement(By.xpath("//input[@id='mobile_number']")).sendKeys("2255005522");
+	    driver.findElement(By.xpath("//input[@id='full_name']")).sendKeys("Normal Visitor");
+	    driver.findElement(By.xpath("//input[@id='vehicle_number']")).sendKeys("KA03HY6254");
+	    Thread.sleep(5000);
+        driver.findElement(By.xpath("//ng-multiselect-dropdown[@id='reason']")).click();
+	    driver.findElement(By.xpath("//div[contains(text(),'Personal')]")).click();
+	    driver.findElement(By.xpath("//textarea[@id='note']")).sendKeys("Manually Entered Visitor Checkin");
+	    driver.findElement(By.xpath("//button[@name='save_visiter']")).click();
+	    Thread.sleep(5000);
+	    System.out.println("Test Case Passed ----- Visitor Checked In");
+	    
+        }
+	   
+	   // @Test(priority=5)
+	    public void ManualCheckOut() throws InterruptedException {
+	    driver.findElement(By.xpath("//a[@href='#/visitor/visitor-out']")).click();
+	    driver.findElement(By.xpath("//button[@type='button' and contains(., 'CHECK OUT')]")).click();
+	    Thread.sleep(5000);
+	    System.out.println("Test Case Passed ----- Visitor Checked Out");
+	    }
+	    @Test(priority=6)
 	    public void staffcheckin() throws InterruptedException {
 	    driver.findElement(By.xpath("//p[contains(text(),'Staff')]")).click();
 	    driver.findElement(By.xpath("//button[@type='button'][contains(text(),'CHECK IN')]")).click();
@@ -67,7 +96,7 @@ public class NewTest {
 	    System.out.println("Test Case Passed ----- Staff Checked In");
 	    }
 	    
-	    @Test(priority=5)
+	    @Test(priority=7)
 	    public void staffcheckout() throws InterruptedException {
 	    driver.findElement(By.xpath("//a[@href='#/staff/staff-out']")).click();
 	    driver.findElement(By.xpath("//button[@type='button'][contains(text(),'CHECK OUT')]")).click();
