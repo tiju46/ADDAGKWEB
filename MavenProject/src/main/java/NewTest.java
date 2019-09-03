@@ -3,6 +3,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -22,6 +23,9 @@ public class NewTest {
 	  System.setProperty("webdriver.gecko.driver", "/home/testing/Downloads/geckodriver-v0.24.0-linux64/geckodriver");
 	  //options.setCapability("marionette", false);
 	  FirefoxOptions options = new FirefoxOptions();
+	  DesiredCapabilities capa =DesiredCapabilities.firefox();
+	     capa.setBrowserName("firefox");
+	     capa.setCapability("binary", "/home/testing/firefox-62.0/firefox/firefox-bin");
       options.setHeadless(true);
       driver = new FirefoxDriver(options);
       }
