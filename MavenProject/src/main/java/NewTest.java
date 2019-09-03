@@ -44,12 +44,12 @@ public class NewTest {
 	    driver.findElement(By.xpath("//ng-multiselect-dropdown[@id='unit_number']")).click();
 	    driver.findElement(By.xpath("//div[contains(text(),'200-15')]")).click();
 	    driver.findElement(By.xpath("//button[@type='button'][contains(text(),'CHECK IN')]")).click();
-	    Thread.sleep(3000);
+	    Thread.sleep(5000);
         driver.findElement(By.xpath("//ng-multiselect-dropdown[@id='reason']")).click();
 	    driver.findElement(By.xpath("//div[contains(text(),'Personal')]")).click();
 	    driver.findElement(By.xpath("//button[@name='save_visiter']")).click();
 	    System.out.println("Test Case Passed ----- Visitor Checked In");
-	    Thread.sleep(5000);
+	    Thread.sleep(10000);
         }
 	   
 	    @Test(priority=3)
