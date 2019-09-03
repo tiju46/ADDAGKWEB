@@ -25,9 +25,9 @@ public class NewTest {
 	  System.setProperty("webdriver.gecko.driver", "/home/testing/Downloads/geckodriver-v0.24.0-linux64/geckodriver");
 	  //options.setCapability("marionette", false);
 	  FirefoxOptions options = new FirefoxOptions();
-	     File pathToBinary = new File("/home/testing/firefox-62.0/firefox/firefox-bin");
-	     FirefoxBinary ffBinary = new FirefoxBinary(pathToBinary);
-	     FirefoxProfile firefoxProfile = new FirefoxProfile();
+	     //File pathToBinary = new File("/home/testing/firefox-62.0/firefox/firefox-bin");
+	     //FirefoxBinary ffBinary = new FirefoxBinary(pathToBinary);
+	     //FirefoxProfile firefoxProfile = new FirefoxProfile();
       options.setHeadless(true);
       driver = new FirefoxDriver(options);
       }
