@@ -13,7 +13,7 @@ public class NewTest {
 	WebDriver driver;
  
   
-   @BeforeTest
+       @BeforeTest
        public void launchbrowser() {
 	        
    
@@ -38,7 +38,7 @@ public class NewTest {
 	    System.out.println("Test Case Passed ----- Successfully Logged In");
 	    Thread.sleep(5000);
 	    }
-        @Test(priority=2)
+        //@Test(priority=2)
         public void CheckIn() throws InterruptedException {
         System.out.println("*****--- Expected Visitor ---*****");
 	    driver.findElement(By.xpath("//ng-multiselect-dropdown[@id='unit_number']")).click();
